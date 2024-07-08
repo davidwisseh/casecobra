@@ -37,5 +37,6 @@ export function constructMetadata({
       images: [image],
     },
     icons,
+    metadataBase: new URL("https://casecobra-gamma-two.vercel.app/"),
   };
 }
