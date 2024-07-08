@@ -17,6 +17,7 @@ import LoginModal from "@/components/LoginModal";
 
 const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
   useEffect(() => setShowConfetti(true));
   const { color, model, finish, material } = configuration;
@@ -57,6 +58,7 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   const { user } = useKindeBrowserClient();
   const handleCheckout = () => {
     if (user) {
+      setIsLoading(true);
       createPaymentSession({ configId: id });
     } else {
       localStorage.setItem("configurationId", id);
@@ -150,6 +152,8 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
 
             <div className="mt-8 flex justify-end pb-12">
               <Button
+                isLoading={isLoading}
+                loadingText="Processing"
                 onClick={() => handleCheckout()}
                 className="px-4 sm:px-6 lg:px-8"
               >
