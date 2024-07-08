@@ -59,12 +59,8 @@ const OrderReceivedEmail = ({
                 Shipping to: {shippingAddress.name}
               </Text>
               <Text style={{ ...global.text, fontSize: 14 }}>
-                {
-                  (shippingAddress.street,
-                  shippingAddress.city,
-                  shippingAddress.state)
-                }
-                {shippingAddress.postalCode}
+                {shippingAddress.street}, {shippingAddress.city},{" "}
+                {shippingAddress.state} {shippingAddress.postalCode}
               </Text>
             </Section>
             <Hr style={global.hr} />
