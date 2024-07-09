@@ -7,3 +7,4 @@
 - [Prisma](https://prisma.io) with [Neon db.](https://neon.tech)
 - [Stripe](https://stripe.com) payment processing.
 - [Kinde](https://kinde.com) user authentication.
+- [Shadcn-ui](https://ui.shadcn.com) Library.
